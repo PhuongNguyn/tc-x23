@@ -15,7 +15,7 @@ const initialState: ICounterState = {
 
 export const incrementByNumber = createAsyncThunk<
   number,
-  any,
+  string,
   {
     dispatch: AppDispatch;
     getState: GetState<RootState>;
