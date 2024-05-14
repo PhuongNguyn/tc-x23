@@ -49,9 +49,9 @@ const test2 = async () => {
 
 const caculate = async () => {
   // Concurrency
-  const [] = await Promise.all(test(), test2());
+  const [resultTest, resultTest2] = await Promise.all([test(), test2()]);
 
-  const c = a + b;
+  const c = resultTest + resultTest2;
 };
 
 caculate();
