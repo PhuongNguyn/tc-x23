@@ -1,7 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import type { GetState, PayloadAction, ThunkAction } from "@reduxjs/toolkit";
-import { AppDispatch } from "../../app/store";
-import { RootState } from "../../app/store";
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface ICounterState {
   value: number;
@@ -13,17 +11,17 @@ const initialState: ICounterState = {
   loading: false,
 };
 
-export const incrementByNumber = createAsyncThunk<
-  number,
-  string,
-  {
-    dispatch: AppDispatch;
-    getState: GetState<RootState>;
-  }
->("counter/inCrementByNumber", async (params, thunkApi) => {
-  thunkApi.dispatch(incrementByOne());
-  return true;
-});
+// export const incrementByNumber = createAsyncThunk<
+//   number,
+//   string,
+//   {
+//     dispatch: AppDispatch;
+//     getState: GetState<RootState>;
+//   }
+// >("counter/inCrementByNumber", async (params, thunkApi) => {
+//   thunkApi.dispatch(incrementByOne());
+//   return true;
+// });
 
 export const counterSlice = createSlice({
   name: "counter",
@@ -36,11 +34,11 @@ export const counterSlice = createSlice({
       state.value = state.value + action.payload;
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(incrementByNumber.fulfilled, (state, action) => {});
-    builder.addCase(incrementByNumber.rejected, (state, action) => {});
-    builder.addCase(incrementByNumber.pending, (state, action) => {});
-  },
+  // extraReducers: (builder) => {
+  //   // builder.addCase(incrementByNumber.fulfilled, (state, action) => {});
+  //   // builder.addCase(incrementByNumber.rejected, (state, action) => {});
+  //   // builder.addCase(incrementByNumber.pending, (state, action) => {});
+  // },
 });
 
 export const { incrementByOne, icrement } = counterSlice.actions;

@@ -1,11 +1,9 @@
-import React from "react"
+import { Link } from "react-router-dom"
 
-
-const Test1 = ({ loading }) => {
-    console.log("test1")
+const Test1 = () => {
     return (
-        <>Test1</>
+        <p className="text-center text-[black] font-bold"><Link to={'/test'}>Back to test page</Link></p>
     )
 }
 
-export default React.memo(Test1)
+export default Test1
