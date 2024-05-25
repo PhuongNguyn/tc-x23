@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 
 const useDebounce = (searchValue, delay) => {
     const [debounceValue, setDebounceValue] = useState(searchValue);
-    const d = 8;
-    const e = 10;
+    const test = () => {}
+    const a  = 0;
     useEffect(() => {
         const handler = setTimeout(() => {
             setDebounceValue(searchValue);
