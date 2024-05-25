@@ -5,6 +5,8 @@ const useDebounce = (searchValue, delay) => {
     const [debounceValue, setDebounceValue] = useState(searchValue);
     const test = () => {}
     const a  = 0;
+    const d = 0;
+    const e = 0;
     useEffect(() => {
         const handler = setTimeout(() => {
             setDebounceValue(searchValue);
